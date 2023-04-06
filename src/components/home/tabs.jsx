@@ -1,6 +1,7 @@
 import * as React from "react";
 import { NewsContent } from "./content";
 export const NewTabsContext = React.createContext();
+
 const TabsHome = () => {
   const [news, setNews] = React.useState(true);
   const [about, setAbout] = React.useState(false);

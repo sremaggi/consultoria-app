@@ -9,7 +9,7 @@ export const Sidebar = (props) => {
   return (
     <div>
       <div
-        className={`bg-[#1e1c29]  fixed  h-full w-16 lg:w-24 flex flex-col justify-between transition-all z-50 ${
+        className={`bg-[#28b622]  fixed  h-full w-16 lg:w-24 flex flex-col justify-between transition-all z-50 top-0 left-0  ${
           showMenu ? "left-0" : "-left-full"
         } mt-10`}
       >
@@ -17,14 +17,14 @@ export const Sidebar = (props) => {
           <ul className="pl-2">
             <li
               className={`${
-                home ? "bg-[#ffffff]" : ""
-              } hover:bg-[#ffffff] p-2 lg:p-4 rounded-tl-lg rounded-bl-lg my-2`}
+                home ? "bg-[#f8f8f8]" : ""
+              } hover:bg-[#f8f8f8] p-2 lg:p-4 rounded-tl-lg rounded-bl-lg my-2`}
             >
               <a
                 href="/"
                 className={`flex ${
-                  home ? "bg-[#dd8372]" : ""
-                } p-2  lg:p-4 rounded-lg justify-center`}
+                  home ? "bg-gray-200" : ""
+                } p-2  lg:p-3 rounded-lg justify-center`}
                 onClick={() => {
                   setHome(true);
                   setProducts(false);
@@ -32,21 +32,21 @@ export const Sidebar = (props) => {
               >
                 <FaHome
                   className={`text-lg ${
-                    home ? "text-gray-900" : "text-[#dd8372]"
+                    home ? "text-[#28b622]" : "text-gray-700"
                   } text-gray-900`}
                 />
               </a>
             </li>
             <li
               className={`${
-                products ? "bg-[#ffffff]" : ""
-              } hover:bg-[#ffffff] p-2 lg:p-4 rounded-tl-xl rounded-bl-xl group transition-colors my-1`}
+                products ? "bg-[#f8f8f8]" : ""
+              } hover:bg-[#f8f8f8] p-2 lg:p-4 rounded-tl-xl rounded-bl-xl group transition-colors my-1`}
             >
               <a
                 href="/#/products"
                 className={`${
-                  products ? "bg-[#dd8372]" : ""
-                } flex p-2 lg:p-4 rounded-lg justify-center transition-colors`}
+                  products ? "bg-gray-200" : ""
+                } flex p-2 lg:p-3 rounded-lg justify-center transition-colors`}
                 onClick={() => {
                   setProducts(true);
                   setHome(false);
@@ -54,7 +54,7 @@ export const Sidebar = (props) => {
               >
                 <FaCashRegister
                   className={`text-lg ${
-                    products ? "text-gray-900" : "text-[#dd8372]"
+                    products ? "text-[#28b622]" : "text-gray-700"
                   } text-gray-900`}
                 />
               </a>
@@ -63,12 +63,12 @@ export const Sidebar = (props) => {
         </div>
         <div>
           <ul className="pl-2">
-            <li className="hover:bg-[#ffffff] p-2 rounded-tl-xl rounded-bl-xl group transition-colors mb-20">
+            <li className="hover:bg-[#f8f8f8] p-2 rounded-tl-xl rounded-bl-xl group transition-colors mb-20">
               <a
                 href="/"
                 className=" flex p-2 rounded-lg justify-center transition-colors"
               >
-                <FaSignOutAlt className=" text-lg text-[#dd8372]" />
+                <FaSignOutAlt className=" text-lg text-red-900" />
               </a>
             </li>
           </ul>

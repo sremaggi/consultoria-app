@@ -1,27 +1,18 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import Collapse from "@mui/material/Collapse";
-import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import RecipeReviewCard from "../card";
-import TitlebarImageList, { CarouselHome } from "../imageList";
+
 import CarouselFade from "../carousel";
+import TitlebarImageList from "../imageList";
 
 export const NewsBody = () => {
   return (
-    <div className="grid grid-cols-8 lg:grid-cols-8 h-full">
-      <div className="col-span-8 lg:col-span-6 bg-red-500 h-full"></div>
+    <div className="grid grid-cols-8 lg:grid-cols-8 h-full mt-2">
+      <div className="col-span-8 md:col-span-5 lg:pr-3 h-full">
+        <CarouselFade></CarouselFade>
+        <TitlebarImageList />
+      </div>
+      <div className="col-span-8 md:col-span-3 lg:pr-3 h-full mx-3 rounded-sm bg-slate-500 hidden md:block">
+        asdas
+      </div>
     </div>
   );
 };

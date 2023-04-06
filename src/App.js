@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { Sidebar } from "./components/sidebar";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { RiMenu5Fill } from "react-icons/ri";
-import NewsScreen from "./screen/news";
+import { NewsScreen } from "./screen/news";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import ProductsScreen from "./screen/products";
+import { BookingsScreen } from "./screen/bookings";
+import { FooterApp } from "./components/footer";
 
 function App() {
   const [showMenu, setShowMenu] = useState(true);
@@ -13,10 +14,10 @@ function App() {
     setShowMenu(!showMenu);
   };
   return (
-    <div className="bg-[#ffffff] w-full min-h-screen">
+    <div className="bg-[#f8f8f8] w-full min-h-screen">
       {/** Movil app menu*/}
       <nav
-        className={`bg-[#1e1c29]  fixed w-full text-2xl py-2 px-4 flex items-center 
+        className={`bg-[#28b622]  fixed top-0 left-0  z-50 w-full text-2xl py-2 pr-4 pl-1 flex items-center 
           rounded-br-xl shadow-slate-50 justify-between text-white`}
       >
         <button className="text-white" onClick={toggleMenu}>
@@ -35,19 +36,17 @@ function App() {
       {/** MAIN*/}
       <main
         className={`text-white ${
-          showMenu ? `pl-20 lg:pl-32 pt-20 pr-3` : "pt-20 pl-3 pr-3"
+          showMenu ? `pl-20 lg:pl-28 pt-16 pr-3` : "pt-16 pl-3 pr-3"
         } grid grid-cols-1 lg:grid-cols-8`}
       >
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-8">
           <HashRouter>
             <Routes>
               <Route exact path="/" element={<NewsScreen />} />
-              <Route exact path="/products" element={<ProductsScreen />} />
+              <Route exact path="/products" element={<BookingsScreen />} />
             </Routes>
           </HashRouter>
-        </div>
-        <div className="lg:col-span-2 text-black fixed lg:static right-0">
-          Carrito
+          <FooterApp showMenu={showMenu} />
         </div>
       </main>
     </div>

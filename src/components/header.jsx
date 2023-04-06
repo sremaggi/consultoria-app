@@ -6,7 +6,6 @@ export const HeaderApp = (props) => {
     <header className="text-black">
       <div className="">
         <h1 className="text-2xl text-gray-600">{title}</h1>
-        <p className="text-gray-800 text-sm">{TimeNowFormat()}</p>
       </div>
     </header>
   );

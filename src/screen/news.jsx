@@ -1,19 +1,15 @@
 import * as React from "react";
 import { HeaderApp } from "../components/header";
-import { SearchBar } from "../components/search";
-import TabsHome, { UserContext } from "../components/home/tabs";
 import { NewsBody } from "../components/home/newsBody";
+import { FooterApp } from "../components/footer";
 
-const NewsScreen = () => {
-  const [news, setNews] = React.useState(true);
-  const [about, setAbout] = React.useState(false);
-  const [contact, setContact] = React.useState(false);
+export const NewsScreen = () => {
   return (
-    <div className="flex flex-col gap-2">
-      <HeaderApp title="Home" />
-      <NewsBody />
+    <div>
+      <div className="flex flex-col ">
+        <HeaderApp title="Home" />
+        <NewsBody />
+      </div>
     </div>
   );
 };
-
-export default NewsScreen;
