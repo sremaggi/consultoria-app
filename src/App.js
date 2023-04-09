@@ -14,7 +14,7 @@ function App() {
     setShowMenu(!showMenu);
   };
   return (
-    <div className="bg-[#f8f8f8] w-full min-h-screen">
+    <div className="bg-[#F2F2F2] w-full min-h-screen">
       {/** Movil app menu*/}
       <nav
         className={`bg-[#28b622]  fixed top-0 left-0  z-50 w-full text-2xl py-2 pr-4 pl-1 flex items-center 
@@ -22,9 +22,9 @@ function App() {
       >
         <button className="text-white" onClick={toggleMenu}>
           {showMenu ? (
-            <AiOutlineCloseCircle className="pt-1 text-3xl" />
+            <AiOutlineCloseCircle className=" ml-1 text-3xl" />
           ) : (
-            <RiMenu5Fill />
+            <RiMenu5Fill className="text-3xl ml-1 " />
           )}
         </button>
         <a href="/" className="ml-5">
@@ -36,7 +36,7 @@ function App() {
       {/** MAIN*/}
       <main
         className={`text-white ${
-          showMenu ? `pl-20 lg:pl-28 pt-16 pr-3` : "pt-16 pl-3 pr-3"
+          showMenu ? `pl-16 lg:pl-20 pt-16 ` : "pt-16 pl-3 "
         } grid grid-cols-1 lg:grid-cols-8`}
       >
         <div className="lg:col-span-8">
@@ -46,9 +46,9 @@ function App() {
               <Route exact path="/products" element={<BookingsScreen />} />
             </Routes>
           </HashRouter>
-          <FooterApp showMenu={showMenu} />
         </div>
       </main>
+      <FooterApp showMenu={showMenu} />
     </div>
   );
 }

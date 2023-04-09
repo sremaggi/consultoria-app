@@ -5,16 +5,11 @@ export const INITIAL_EVENTS = [
   {
     id: createEventId(),
     title: "RESERVA",
-    start: todayStr,
-    end: "2023-02-27",
+    start: "2023-04-01",
+    end: "2023-04-04",
     color: "red",
-  },
-  {
-    id: createEventId(),
-    title: "RESERVA",
-    start: "2023-03-01",
-    end: "2023-03-04",
-    color: "red",
+    editable: false,
+    allDay: true,
   },
 ];
 

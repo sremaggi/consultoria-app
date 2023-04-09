@@ -34,7 +34,6 @@ export default class DemoApp extends React.Component {
             firstDay={1}
             themeSystem="Minty"
             initialView="dayGridMonth"
-            editable={true}
             selectable={true}
             selectMirror={true}
             dayMaxEvents={true}
@@ -43,7 +42,7 @@ export default class DemoApp extends React.Component {
             initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
             select={this.handleDateSelect}
             eventContent={renderEventContent} // custom render function
-            eventClick={this.handleEventClick}
+            //eventClick={this.handleEventClick}
             eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
             titleFormat={{ year: "numeric", month: "short" }}
             eventAdd={function (e) {
@@ -71,33 +70,19 @@ export default class DemoApp extends React.Component {
   };
 
   handleDateSelect = (selectInfo) => {
-    INITIAL_EVENTS.forEach((event) => {
-      RangeDates(event.start, event.end).forEach((book) => {
-        RangeDates(selectInfo.startStr, selectInfo.endStr).forEach(
-          (selected) => {
-            if (book == selected) {
-              alert("NO SE PUEDE SELECCIONAR ESTA FECHA");
-            }
-          }
-        );
-      });
-    });
-    let title = prompt("Please enter a new title for your event");
     console.log(selectInfo);
     let calendarApi = selectInfo.view.calendar;
-    console.log("HEIGHT", window.screen.height);
+
     calendarApi.unselect(); // clear date selection
 
-    if (title) {
-      calendarApi.addEvent({
-        id: createEventId(),
-        title,
-        start: selectInfo.startStr,
-        end: selectInfo.endStr,
-        allDay: selectInfo.allDay,
-        color: "red",
-      });
-    }
+    calendarApi.addEvent({
+      id: createEventId(),
+      title: "RESERVA",
+      start: selectInfo.startStr,
+      end: selectInfo.endStr,
+      allDay: selectInfo.allDay,
+      color: "red",
+    });
   };
 
   handleEventClick = (clickInfo) => {

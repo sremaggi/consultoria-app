@@ -9,15 +9,12 @@ export const BookingsScreen = () => {
           <HeaderApp title="Calendario" />
         </div>
       </div>
-      <div className="grid grid-cols-4 pt-2">
-        <div className="flex col-span-2 bg-lime-500 justify-center">a</div>
+      {/* <div className="grid grid-cols-4 pt-2">
+        <div className="flex col-span-4 bg-lime-500 justify-center">a</div>
         <div className="flex col-span-2 bg-orange-900 justify-center">a</div>
-      </div>
+      </div> */}
       <div className="grid grid-cols-2">
-        <div className="col-span-2 bg-green-400/20 ">
-          <FullCalendarApp />
-        </div>
-        <div className="col-span-2">
+        <div className="hidden md:block col-span-2">
           <FullCalendarApp />
         </div>
       </div>

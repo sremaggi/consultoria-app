@@ -2,6 +2,7 @@ import * as React from "react";
 
 import CarouselFade from "../carousel";
 import TitlebarImageList from "../imageList";
+import { WelcomeCard } from "../welcomeCard";
 
 export const NewsBody = () => {
   return (
@@ -10,9 +11,7 @@ export const NewsBody = () => {
         <CarouselFade></CarouselFade>
         <TitlebarImageList />
       </div>
-      <div className="col-span-8 md:col-span-3 lg:pr-3 h-full mx-3 rounded-sm bg-slate-500 hidden md:block">
-        asdas
-      </div>
+      <WelcomeCard />
     </div>
   );
 };

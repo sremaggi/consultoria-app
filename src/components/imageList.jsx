@@ -3,7 +3,7 @@ import * as React from "react";
 export default function TitlebarImageList() {
   return (
     <div
-      className={`grid grid-cols-2 lg:grid-cols-4 gap-1 mt-2 text-center rounded-lg`}
+      className={`grid grid-cols-2 lg:grid-cols-4 gap-1 mt-2 text-center rounded-lg shadow-lg`}
     >
       {itemData.map((i) => {
         return (
