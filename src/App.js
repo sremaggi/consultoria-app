@@ -9,13 +9,14 @@ import { BookingsScreen } from "./screen/bookings";
 import { FooterApp } from "./components/footer";
 
 function App() {
-  const [showMenu, setShowMenu] = useState(true);
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
+  //const [showMenu, setShowMenu] = useState(false);
+  //const toggleMenu = () => {
+  //  setShowMenu(!showMenu);
+  //};
   return (
     <div className="bg-[#F2F2F2] w-full min-h-screen">
       {/** Movil app menu*/}
+      {/** 
       <nav
         className={`bg-[#28b622]  fixed top-0 left-0  z-50 w-full text-2xl py-2 pr-4 pl-1 flex items-center 
           rounded-br-xl shadow-slate-50 justify-between text-white`}
@@ -31,14 +32,11 @@ function App() {
           LOGO
         </a>
       </nav>
-      {/** Sidebar*/}
-      <Sidebar showMenu={showMenu} />
+      */}
+      {/** Sidebar
+      <Sidebar showMenu={showMenu} />*/}
       {/** MAIN*/}
-      <main
-        className={`text-white ${
-          showMenu ? `pl-16 lg:pl-20 pt-16 ` : "pt-16 pl-3 "
-        } grid grid-cols-1 lg:grid-cols-8`}
-      >
+      <main>
         <div className="lg:col-span-8">
           <HashRouter>
             <Routes>
@@ -48,7 +46,7 @@ function App() {
           </HashRouter>
         </div>
       </main>
-      <FooterApp showMenu={showMenu} />
+      {/**<FooterApp showMenu={showMenu} />*/}
     </div>
   );
 }

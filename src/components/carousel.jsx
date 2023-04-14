@@ -14,9 +14,9 @@ const slides = [
   },
 ];
 
-function CarouselFade() {
+function CarouselFade(props) {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const { title } = props;
   const previusSlide = () => {
     return currentIndex == 0
       ? setCurrentIndex(slides.length - 1)
@@ -33,11 +33,17 @@ function CarouselFade() {
   };
 
   return (
-    <div className="max-w-[1400px] h-[315px] lg:h-[550px] w-full m-auto relative group">
+    <div
+      className={` max-w-[600px] h-[200px] shadow-md   lg:h-[225px] w-full m-auto relative group`}
+    >
       <div
-        className="w-full h-full rounded-md bg-center bg-cover duration-500"
+        className="flex items-center justify-center border-[1px] border-[#28b622] w-full h-full rounded-md bg-center bg-cover duration-500"
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-      ></div>
+      >
+        <h1 className="bg-black/30 text-white py-2 w-full flex items-center justify-center">
+          {title}
+        </h1>
+      </div>
       <div>
         {/** Left Arrow */}
         <BsChevronCompactLeft
@@ -52,10 +58,10 @@ function CarouselFade() {
         <BsChevronCompactRight
           onClick={nextSlide}
           size={50}
-          className={`hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-0 text-2xl rounded-full p-2 bg-[#28b622]/20 text-green cursor-pointer`}
+          className={`hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-0 text-2xl rounded-full p-2 bg-[#28b622]/20 text-white cursor-pointer`}
         />
       </div>
-      <div className="absolute flex left-0 right-0 bottom-0 justify-center ml-auto mr-auto text-[#28b622] ">
+      <div className="absolute flex left-0 right-0 bottom-0 justify-center ml-auto mr-auto text-white ">
         {slides.map((slide, slideIndex) => (
           <div
             key={slideIndex}
@@ -64,7 +70,11 @@ function CarouselFade() {
             }}
             className="cursor-pointer text-2xl"
           >
-            <RxDotFilled />
+            <RxDotFilled
+              className={
+                slide.url == slides[currentIndex].url ? "text-[#28b622]" : ""
+              }
+            />
           </div>
         ))}
       </div>
